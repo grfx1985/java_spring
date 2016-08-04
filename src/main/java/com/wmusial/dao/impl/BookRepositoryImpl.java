@@ -9,18 +9,18 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-@Repository
-public class BookRepositoryImpl implements BookRepository {
+// @Repository
+public class BookRepositoryImpl{  // usuniete implements BookRepository
 
-    @PersistenceContext
+    // @PersistenceContext
     private EntityManager entityManager;
 
-    @Override
-    public List<Book> findAll() {
-        TypedQuery<Book> query = entityManager.createQuery("SELECT b FROM Book b", Book.class);
-
-        List<Book> books = query.getResultList();
-
-        return books;
-    }
+    // @Override
+//    public List<Book> findAll() {
+//        TypedQuery<Book> query = entityManager.createQuery("SELECT b FROM Book b", Book.class);
+//
+//        List<Book> books = query.getResultList();
+//
+//        return books;
+//    }
 }
