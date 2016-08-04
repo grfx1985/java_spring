@@ -19,20 +19,15 @@
                 </tr>
                 </thead>
                 <tbody>
+                <c:forEach var="book" items="${books}">
                 <tr>
-                    <td>1</td>
-                    <td>aa</td>
-                    <td>aabb</td>
-                    <td>6</td>
+                    <td>${book.id}</td>
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>${book.available}</td>
                     <td class="text-center"><a class="btn btn-sm btn-primary">Rent</a></td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>aa</td>
-                    <td>aabb</td>
-                    <td>10</td>
-                    <td class="text-center"><a class="btn btn-sm btn-primary">Rent</a></td>
-                </tr>
+                </c:ForEach>
                 </tbody>
             </table>
         </div>

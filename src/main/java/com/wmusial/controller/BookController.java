@@ -5,10 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+// @RequestMapping("/book") uzywany wszedzie tutaj
 public class BookController {
 
     @RequestMapping(value="/books", method= RequestMethod.GET)
     public String getBooksPage(){
         return "books";
     }
+
+
 }
