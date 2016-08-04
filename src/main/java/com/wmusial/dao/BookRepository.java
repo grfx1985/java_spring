@@ -2,10 +2,11 @@ package com.wmusial.dao;
 
 
 import com.wmusial.model.Book;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface BookRepository {
+public interface BookRepository extends JpaRepository<Book, Long>{
 
 //    List<Book> findAll();
 }
