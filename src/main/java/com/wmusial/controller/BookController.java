@@ -52,6 +52,7 @@ import java.util.List;
     @RequestMapping(value="/book/save", method = RequestMethod.POST)
     public String postCreateBook(@RequestParam(name = "author", required = true) String author,
                                  @RequestParam String title,
+                                 @RequestParam Long id,
                                  @RequestParam int available) {
             // alternatywa dla @REQUESTPARAM to @ModelAttribute Book book
                                  // odebrac parametry z formularza
@@ -60,6 +61,7 @@ import java.util.List;
         // zrobic obiekty z parametrow
         // !! JESLI UZYJEMY @ModelAttribute ^^ to obiektu nizej juz nie trzeba
             Book book = new Book(author, title, available);
+            book.setId(id);
         // zapisac je do bazy
             bookService.save(book);
 
