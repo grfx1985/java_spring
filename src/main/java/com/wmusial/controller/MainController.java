@@ -12,5 +12,20 @@ public class MainController {
         return "main";
     }
 
+    @RequestMapping(value="/login", method=RequestMethod.GET)
+    public String getLoginPage(){
+        return "login";
+    }
 
+    @RequestMapping(value="/register", method=RequestMethod.GET)
+    public String  getRegisterPage(){
+        return "register";
+    }
 }
+
+// MainController
+// /login -> chce zobaczyc login
+// /register -> strona rejestracji
+
+// BookController
+// /books -> strona books.jsp
