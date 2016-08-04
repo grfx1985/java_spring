@@ -1,6 +1,7 @@
 package com.wmusial.controller;
 
 import com.wmusial.model.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,13 @@ public class BookController {
     @RequestMapping(value="/books", method= RequestMethod.GET)
     public String getBooksPage(Model model, HttpSession session){
 
-        List<Book> bookList = new ArrayList<>();
+        @Autowired
+        private BookService bookService;
+
+        List<Book> bookList = bookService.findAll();
+
+
+//                new ArrayList<>();
 
 //        Book book = new Book();
 //
