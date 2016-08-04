@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/WEB-INF/include/header.jsp" %>
 <%@ include file="/WEB-INF/include/navbar.jsp" %>
-
+<c:url var="editBookUrl" value="/book/edit"/>
 <div class="container">
 
     <h1>List of books</h1>
@@ -16,6 +16,7 @@
                     <th class="text-center">Author</th>
                     <th class="text-center col-md-1">Available</th>
                     <th class="text-center col-md-1">Action</th>
+                    <th class="text-center col-md-1">Edit</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -26,6 +27,7 @@
                     <td>${book.author}</td>
                     <td>${book.available}</td>
                     <td class="text-center"><a class="btn btn-sm btn-primary">Rent</a></td>
+                    <td class="text-center"><a href="${editBookUrl}" class="btn btn-sm btn-primary">Edit</a></td>
                 </tr>
                 </c:forEach>
                 </tbody>
