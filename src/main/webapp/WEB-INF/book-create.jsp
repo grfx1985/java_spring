@@ -12,19 +12,19 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="author">Author:</label>
                 <div class="col-sm-6">
-                    <input name="author"  type="text" id="author" class="form-control" placeholder="Enter author" autofocus>
+                    <input value="${book.author}" name="author"  type="text" id="author" class="form-control" placeholder="Enter author" autofocus>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="title">Title:</label>
                 <div class="col-sm-6">
-                    <input name="title" type="text" id="title" class="form-control" placeholder="Enter title" autofocus>
+                    <input value="${book.title}" name="title" type="text" id="title" class="form-control" placeholder="Enter title" autofocus>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="available">Available:</label>
                 <div class="col-sm-6">
-                    <input name="available"  type="number" id="available" class="form-control" placeholder="Enter available number" autofocus>
+                    <input value="${book.available}" name="available"  type="number" id="available" class="form-control" placeholder="Enter available number" autofocus>
                 </div>
             </div>
             <div class="form-group">

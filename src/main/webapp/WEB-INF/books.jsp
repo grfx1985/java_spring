@@ -27,7 +27,7 @@
                     <td>${book.author}</td>
                     <td>${book.available}</td>
                     <td class="text-center"><a class="btn btn-sm btn-primary">Rent</a></td>
-                    <td class="text-center"><a href="${editBookUrl}" class="btn btn-sm btn-primary">Edit</a></td>
+                    <td class="text-center"><a href="${editBookUrl}/${book.id}" class="btn btn-sm btn-primary">Edit</a></td>
                 </tr>
                 </c:forEach>
                 </tbody>

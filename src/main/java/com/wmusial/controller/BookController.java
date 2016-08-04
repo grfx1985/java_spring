@@ -5,6 +5,7 @@ import com.wmusial.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -65,8 +66,12 @@ import java.util.List;
         return "redirect:/books";
     }
 
-    @RequestMapping(value="/book/edit", method = RequestMethod.GET)
-    public String getEditBookForm() {
+    @RequestMapping(value="/book/edit/{id}", method = RequestMethod.GET)
+    public String getEditBookForm(Model model,@PathVariable Long id) {
+
+        Book book = bookService.findById(id);
+        model.addAttribute("book",book);
+
         return "book-create";
     }
 
