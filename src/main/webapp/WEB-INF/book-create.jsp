@@ -2,13 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/WEB-INF/include/header.jsp" %>
 <%@ include file="/WEB-INF/include/navbar.jsp" %>
-
+<c:url var="createBook" value="book/save"/>
 <div class="container">
 
     <h1>Create Book</h1>
 
     <div class="row">
-        <form role="form" class="form-horizontal">
+        <form action="${createBookUrl}" method="post" role="form" class="form-horizontal">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="author">Author:</label>
                 <div class="col-sm-6">
