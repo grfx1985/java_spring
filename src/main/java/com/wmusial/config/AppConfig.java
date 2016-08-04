@@ -25,6 +25,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         viewResolver.setSuffix(".jsp");
 
         // kontroler zwraca info ze mamy wyswietlic user --> /WEB-INF/user.jsp
-        return viewResolver();
+        return viewResolver;
     }
 }
