@@ -49,10 +49,12 @@ import java.util.List;
     public String postCreateBook(@RequestParam(name = "author", required = true) String author,
                                  @RequestParam String title,
                                  @RequestParam int available) {
+            // alternatywa dla @REQUESTPARAM to @ModelAttribute Book book
                                  // odebrac parametry z formularza
 
 
         // zrobic obiekty z parametrow
+        // !! JESLI UZYJEMY @ModelAttribute ^^ to obiektu nizej juz nie trzeba
             Book book = new Book(author, title, available);
         // zapisac je do bazy
             bookService.save(book);
