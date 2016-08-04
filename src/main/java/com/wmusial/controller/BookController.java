@@ -65,5 +65,10 @@ import java.util.List;
         return "redirect:/books";
     }
 
+    @RequestMapping(value="/book/edit", method = RequestMethod.GET)
+    public String getEditBookForm() {
+        return "book-create";
+    }
+
 
 }
