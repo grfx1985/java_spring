@@ -42,7 +42,10 @@ import java.util.List;
     }
 
     @RequestMapping(value="/book/create", method = RequestMethod.GET)
-    public String getCreateBookString() {
+    public String getCreateBookString(Model model) {
+
+        model.addAttribute("book", new Book());
+
         return "book-create";
     }
 
