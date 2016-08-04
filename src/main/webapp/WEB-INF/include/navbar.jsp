@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:url var="booksUrl" value="/books"/>
+<c:url var="createBookUrl" value="/book/create"/>
 <c:url var="createUserUrl" value="/user/create"/>
 
 <nav class="navbar navbar-inverse">
@@ -28,7 +29,7 @@
                 <li class="dropdown" >
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Books <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="${createUserUrl}">Add new...</a></li>
+                        <li><a href="${createBookUrl}">Add new...</a></li>
                         <li role="separator" class="divider"> </li>
                         <li><a href="${booksUrl}">Show all</a></li>
                     </ul>
