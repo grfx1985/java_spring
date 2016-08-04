@@ -10,7 +10,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 // @Repository
-public class BookRepositoryImpl{  // usuniete implements BookRepository
+public class BookRepositoryImpl_not_used_any_more_when_spring_data_added {  // usuniete implements BookRepository
 
     // @PersistenceContext
     private EntityManager entityManager;
