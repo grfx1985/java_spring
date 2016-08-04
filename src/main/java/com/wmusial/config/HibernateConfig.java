@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -17,6 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource(value = {"classpath:hibernate.properties"})
+@EnableJpaRepositories(basePackages = "com.wmusial.dao") // To wlacza Spring data - wsparcie dla obslugi komunikacji z baza
 public class HibernateConfig {
 
     @Autowired
