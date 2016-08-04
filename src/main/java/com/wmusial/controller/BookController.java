@@ -44,4 +44,20 @@ import java.util.List;
         return "book-create";
     }
 
+    @RequestMapping(value="/book/save", method = RequestMethod.POST)
+    public String postCreateBook() {
+
+        // odebrac parametry z formularza
+
+        // zrobic obiekty z parametrow
+
+        // zapisac je do bazy
+
+        // przekierowac uzytkownika do listy ksiazek
+
+
+        return "";
+    }
+
+
 }
