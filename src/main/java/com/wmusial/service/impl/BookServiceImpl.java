@@ -10,7 +10,7 @@ import java.util.List;
 
 public class BookServiceImpl implements BookService {
     @Autowired
-    private BookRepository;
+    private BookRepository bookRepository;
 
     @Override
     public List<Book> findAll() { return null }
