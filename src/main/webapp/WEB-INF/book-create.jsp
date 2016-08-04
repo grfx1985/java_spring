@@ -9,6 +9,7 @@
 
     <div class="row">
         <form action="${createBookUrl}" method="post" role="form" class="form-horizontal">
+            <input type="hidden" name="id" value="${book.id}" />
             <div class="form-group">
                 <label class="control-label col-sm-2" for="author">Author:</label>
                 <div class="col-sm-6">
