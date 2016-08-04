@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -45,14 +46,16 @@ import java.util.List;
     }
 
     @RequestMapping(value="/book/save", method = RequestMethod.POST)
-    public String postCreateBook() {
+    public String postCreateBook(@RequestParam(name = "author", required = true) String author,
+                                 @RequestParam String title,
+                                 @RequestParam int available) {
+                                 // odebrac parametry z formularza
 
-        // odebrac parametry z formularza
 
         // zrobic obiekty z parametrow
-
+            Book book = new Book(author, title, available);
         // zapisac je do bazy
-
+            bookService.save(book);
         // przekierowac uzytkownika do listy ksiazek
 
 
