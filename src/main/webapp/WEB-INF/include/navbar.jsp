@@ -25,7 +25,7 @@
                         <li><a href="#">Show all</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Books</a></li>
+                <li><a href="${booksUrl}">Books</a></li>
                 <li><a href="#">My rents</a></li>
             </ul>
 
