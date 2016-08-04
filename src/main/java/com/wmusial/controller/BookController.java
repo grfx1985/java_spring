@@ -56,10 +56,11 @@ import java.util.List;
             Book book = new Book(author, title, available);
         // zapisac je do bazy
             bookService.save(book);
+
+
         // przekierowac uzytkownika do listy ksiazek
 
-
-        return "";
+        return "redirect:/books";
     }
 
 
