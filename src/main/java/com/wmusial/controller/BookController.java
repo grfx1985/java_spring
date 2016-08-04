@@ -44,7 +44,7 @@ import java.util.List;
 
     @RequestMapping(value="/book/create", method = RequestMethod.GET)
     public String getCreateBookString() {
-        return "create-book";
+        return "book-create";
     }
 
 }
