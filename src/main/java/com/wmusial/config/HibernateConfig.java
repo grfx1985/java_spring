@@ -2,6 +2,7 @@ package com.wmusial.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -14,6 +15,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+@Configuration
 @PropertySource(value = {"hibernate.properties"})
 public class HibernateConfig {
 
@@ -59,6 +61,4 @@ public class HibernateConfig {
         transactionManager.setEntityManagerFactory(entityManagerFactory());
         return transactionManager;
     }
-
-
 }
