@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-// @RequestMapping("/book") uzywany wszedzie tutaj
+// @RequestMapping("/book") uzywany wszedzie tutaj, jesli to odkomentuje (cos jak scope w routes)
     public class BookController {
 
 
