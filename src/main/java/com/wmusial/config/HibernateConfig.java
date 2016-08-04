@@ -5,10 +5,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import java.util.Properties;
+
 @PropertySource(value = {"hibernate.properties"})
 public class HibernateConfig {
 
@@ -17,7 +21,7 @@ public class HibernateConfig {
     //1. DataSource
 
     @Bean
-    public DataSource dataSource{
+    public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driver.class.name"));
         dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
@@ -28,8 +32,23 @@ public class HibernateConfig {
     }
     //2. EntityManagerFactory
     @Bean
-    public EntityManagerFactory entityManagerFactory{
+    public EntityManagerFactory entityManagerFactory(){
+        HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        Properties properties = new Properties();
 
+        properties.put("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
+        properties.put("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
+        properties.put("hibernate.format_sql", environment.getProperty("hibernate.format_sql"));
+        properties.put("hibernate.generate_statistics", environment.getProperty("hibernate.generate_statistics"));
+
+        LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
+        factoryBean.setPackagesToScan("com.wmusial.model");
+        factoryBean.setJpaVendorAdapter(vendorAdapter);
+        factoryBean.setJpaProperties(properties);
+        factoryBean.setDataSource(dataSource());
+        factoryBean.afterPropertiesSet();
+
+        return factoryBean.getObject();
 
     }
     //3. PlatformTransactionManager
