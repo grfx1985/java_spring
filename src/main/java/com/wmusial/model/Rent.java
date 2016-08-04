@@ -15,4 +15,5 @@ import java.util.Date;
 
 public @Data class Rent extends BaseEntity {
     private Date returnDate;
+    private Date rentDate;
 }
