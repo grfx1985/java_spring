@@ -80,5 +80,13 @@ import java.util.List;
         return "book-create";
     }
 
+    @RequestMapping(value="/book/delete/{id}", method = RequestMethod.GET)
+    public String getDeleteBook(Model model,@PathVariable Long id) {
+
+        bookService.deleteById(id);
+
+        return "redirect:/books";
+    }
+
 
 }
