@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@PropertySource(value = {"hibernate.properties"})
+@PropertySource(value = {"classpath:hibernate.properties"})
 public class HibernateConfig {
 
     @Autowired
