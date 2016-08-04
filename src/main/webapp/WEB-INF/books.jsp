@@ -19,7 +19,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="book" items="${books}">
+                <c:forEach var="book" items="${bookList}">
                 <tr>
                     <td>${book.id}</td>
                     <td>${book.title}</td>
@@ -27,7 +27,7 @@
                     <td>${book.available}</td>
                     <td class="text-center"><a class="btn btn-sm btn-primary">Rent</a></td>
                 </tr>
-                </c:ForEach>
+                </c:forEach>
                 </tbody>
             </table>
         </div>
