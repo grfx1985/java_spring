@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/WEB-INF/include/header.jsp" %>
 <%@ include file="/WEB-INF/include/navbar.jsp" %>
-<c:url var="createBook" value="book/save"/>
+<c:url var="createBookUrl" value="/book/save"/>
 <div class="container">
 
     <h1>Create Book</h1>
