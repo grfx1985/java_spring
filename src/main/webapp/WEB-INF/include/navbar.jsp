@@ -24,6 +24,8 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+                <%--  rola admin widzi userow  --%>
+                <sec:authorize access="hasRole('ADMIN')">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -32,6 +34,7 @@
                         <li><a href="#">Show all</a></li>
                     </ul>
                 </li>
+                </sec:authorize>
                 <li class="dropdown" >
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Books <span class="caret"></span></a>
                     <ul class="dropdown-menu">
