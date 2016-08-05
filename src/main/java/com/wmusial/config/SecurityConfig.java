@@ -64,8 +64,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 
 
-                .csrf()
-                    .disable() // przyklad w formularzu bedzie  pozniej jak przygotowac zeby dzialalo
+//                .csrf()
+//                    .disable() // przyklad w formularzu bedzie  pozniej jak przygotowac zeby dzialalo
 
                 .logout()
                     .logoutUrl("/logout")
