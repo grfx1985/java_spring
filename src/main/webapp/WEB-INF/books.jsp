@@ -47,6 +47,7 @@
     $(function() {
         $('.delete-button').on('click', function(event) {
             console.log(event);
+            event.preventDefault();
             var url = event.target.href;
             $.post(url);
             location.reload();
