@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/WEB-INF/include/header.jsp" %>
-
+<c:url var="registerUserUrl" value="/register"/>
+<c:url var="createUserUrl" value="/login"/>
 <div class="container">
     <c:if test="${param.logout != null}">
     <div class="alert alert-success fade in">
@@ -25,9 +26,9 @@
 
     <div class="card card-container">
         <h4> Login to your account</h4>
-        <form class="form-signin">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <form action="${createUserUrl}" method="post" class="form-signin">
+            <input name="emial" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
             <div id="remember" class="checkbox">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me
@@ -39,7 +40,7 @@
             <a href="#" class="forgot-password">Forgot the password?</a>
         </div>
         <div class="margin-bottom-10">
-            Don't have account? <a href="#" class="register">Create account</a>
+            Don't have account? <a href="${registerUserUrl}" class="register">Create account</a>
         </div>
     </div>
 </div>
