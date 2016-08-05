@@ -1,6 +1,10 @@
 package com.wmusial.controller;
 
+import com.wmusial.model.User;
+import com.wmusial.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -20,6 +24,20 @@ public class MainController {
     @RequestMapping(value="/register", method=RequestMethod.GET)
     public String  getRegisterPage(){
         return "register";
+    }
+
+    @Autowired
+    private UserService userService;
+
+    @RequestMapping(value="/register", method = RequestMethod.POST)
+    public String postCreateBook(@ModelAttribute User user) {
+
+        // zapisac je do bazy
+        userService.save(user);
+
+        // przekierowac
+
+        return "redirect:/login";
     }
 }
 
