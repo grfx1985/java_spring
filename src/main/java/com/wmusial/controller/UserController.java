@@ -7,6 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -60,6 +61,14 @@ public class UserController {
         // przekierowac uzytkownika do listy ksiazek
 
         return "redirect:/users";
+    }
+
+    @RequestMapping(value="/user/delete/{id}", method = RequestMethod.POST)
+    public String postDeleteBook(@PathVariable Long id) {
+
+        userService.deleteById(id);
+
+        return "redirect:/"; // javascript to ogarnie wiec moze byc nawet nic
     }
 
 }
