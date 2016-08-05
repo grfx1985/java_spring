@@ -3,6 +3,8 @@
 
 <c:url var="booksUrl" value="/books"/>
 <c:url var="createBookUrl" value="/book/create"/>
+
+
 <c:url var="createUserUrl" value="/user/create"/>
 <c:url var="logoutUserUrl" value="/logout"/>
 

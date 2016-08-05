@@ -27,6 +27,9 @@
     <div class="card card-container">
         <h4> Login to your account</h4>
         <form action="${loginUserUrl}" method="post" class="form-signin">
+            <input type="hidden"
+                   name="${_csrf.parameterName}"
+                   value="${_csrf.token}"/>
             <input name="emial" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
             <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
             <div id="remember" class="checkbox">

@@ -8,6 +8,9 @@
 
     <div class="row">
         <form role="form" class="form-horizontal">
+            <input type="hidden"
+                   name="${_csrf.parameterName}"
+                   value="${_csrf.token}"/>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="firstName">First name:</label>
                 <div class="col-sm-6">

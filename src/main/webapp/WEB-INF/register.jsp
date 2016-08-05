@@ -6,6 +6,9 @@
     <div class="card card-container">
         <h4> Create new account</h4>
         <form action="${createUserUrl}" method="post"  class="form-signin">
+            <input type="hidden"
+                   name="${_csrf.parameterName}"
+                   value="${_csrf.token}"/>
             <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
             <input name="firstName" type="text" id="inputFirstName" class="form-control" placeholder="First name" required>
             <input name="lastName" type="text" id="inputLastName" class="form-control" placeholder="Last name" required>
