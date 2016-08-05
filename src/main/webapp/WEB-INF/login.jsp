@@ -32,11 +32,11 @@
                    value="${_csrf.token}"/>
             <input name="emial" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
             <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div id="remember" class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
+            <%--<div id="remember" class="checkbox">--%>
+                <%--<label>--%>
+                    <%--<input type="checkbox" value="remember-me"> Remember me--%>
+                <%--</label>--%>
+            <%--</div>--%>
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
         </form>
         <div class="margin-bottom-10">
