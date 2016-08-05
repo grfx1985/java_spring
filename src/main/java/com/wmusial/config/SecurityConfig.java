@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.sql.DataSource;
 
@@ -36,7 +37,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // spring zaklada ze mamy users table z username  i password kolumnami
 
         auth.userDetailsService(userService); // opcja z frameworkiem spring hibernate 3 opcja
-    }
+        auth.userDetailsService(userService).passwordEncoder(new BCryptPasswordEncoder(10)); // 10 = sila / default sila  hashowanie hasla zanim zapiszemy do bazy
+
+     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception { // dopasowanie odpowiednich widokow nie default springowy ekran logowania/ rejestracji itd.

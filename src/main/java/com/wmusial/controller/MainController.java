@@ -23,8 +23,6 @@ public class MainController {
 
     @RequestMapping(value="/logout", method=RequestMethod.POST)
     public String postLogoutPage(){
-
-
         return "redirect:/login";
     }
 
