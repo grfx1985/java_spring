@@ -39,14 +39,33 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception { // dopasowanie odpowiednich widokow nie default springowy ekran logowania
+    protected void configure(HttpSecurity http) throws Exception { // dopasowanie odpowiednich widokow nie default springowy ekran logowania/ rejestracji itd.
         http
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/**").authenticated()
+
+
                 .and()
 
+
+                .formLogin()
+                    .usernameParameter("emial")
+                    .passwordParameter("password")
+                    .loginPage("/login")
+                    .loginProcessingUrl("/login") // gdzie leci post
+
+
+                .and()
+
+
+                .csrf()
+                    .disable() // przyklad w formularzu bedzie  pozniej jak przygotowac zeby dzialalo
+
+                .logout()
+                    .logoutUrl("/logout")
+                    .logoutSuccessUrl("/login?logout");
 
     }
 }
