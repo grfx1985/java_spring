@@ -2,26 +2,26 @@
 <%@ include file="/WEB-INF/include/header.jsp" %>
 
 <div class="container">
-    <c: if test="${param.logout != null}">
+    <c:if test="${param.logout != null}">
     <div class="alert alert-success fade in">
         <a class="close" data-dismiss="alert" href="#">&times;</a>
         <p>You've logged out</p>
     </div>
-    </c:>
+    </c:if>
 
-    <c: test="${param.register != null}">
+    <c:if test="${param.register != null}">
     <div class="alert alert-info fade in">
         <a class="close" data-dismiss="alert" href="#">&times;</a>
         <p>Register successful. You can log in</p>
     </div>
-    </c:>
+    </c:if>
 
-    <c: if test="${param.error != null}">
+    <c:if test="${param.error != null}">
     <div class="alert alert-danger fade in">
         <a class="close" data-dismiss="alert" href="#">&times;</a>
         <p>Username or password is incorrect</p>
     </div>
-    </c:>
+    </c:if>
 
     <div class="card card-container">
         <h4> Login to your account</h4>
