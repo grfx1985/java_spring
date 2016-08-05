@@ -8,10 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
-@Controller
+@RestController
+//@Controller == ususawmy przy api
 @RequestMapping("/api")
 public class RestUserController {
 
@@ -19,7 +20,7 @@ public class RestUserController {
     private UserService userService;
 
     @RequestMapping(value="/users" , method= RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
+    //@ResponseBody == jesli uzywamy restapi nie trzeba
     // trzeba dolozyc do poma biblioteke
     /*  <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
