@@ -30,8 +30,12 @@ public class UserServiceImpl implements UserService {
         }
 
         List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN")); // role jak dodamy spring zinterpretuje premission jest druga opcja
 
+        if (user.getRole() == User.Role.ADMIN) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN")); // role jak dodamy spring zinterpretuje // premission jest druga opcja
+        } else {
+            authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+        }
 
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(),
