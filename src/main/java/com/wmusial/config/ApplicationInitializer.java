@@ -39,7 +39,8 @@ public class ApplicationInitializer implements WebApplicationInitializer {
 
         //ekran logowania filter
         DelegatingFilterProxy delegatingFilterProxy = new DelegatingFilterProxy();
-        servletContext.addFilter("springSecurityFilterChain" , delegatingFilterProxy).addMappingForUrlPatterns(null, true ,"/*");
+        servletContext.addFilter("springSecurityFilterChain" , delegatingFilterProxy)
+                .addMappingForUrlPatterns(null, true ,"/*");
 
     }
 }
