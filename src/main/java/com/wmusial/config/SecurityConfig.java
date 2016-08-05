@@ -40,6 +40,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception { // dopasowanie odpowiednich widokow nie default springowy ekran logowania
+        http
+                .authorizeRequests()
+                .antMatchers("/login").permitAll()
+                .antMatchers("/register").permitAll()
+                .antMatchers("/**").authenticated()
+                .and()
+
 
     }
 }
