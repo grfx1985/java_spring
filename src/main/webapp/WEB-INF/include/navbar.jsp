@@ -29,7 +29,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">New...</a></li>
+                        <li><a href="${createUserUrl}">New...</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="${usersUrl}">Show all</a></li>
                     </ul>
