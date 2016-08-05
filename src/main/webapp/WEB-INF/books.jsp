@@ -3,6 +3,7 @@
 <%@ include file="/WEB-INF/include/navbar.jsp" %>
 <c:url var="editBookUrl" value="/book/edit"/>
 <c:url var="deleteBookUrl" value="/book/delete"/>
+<c:url var="rentBookUrl" value="/rent/book"/>
 <div class="container">
 
     <h1>List of books</h1>
@@ -28,7 +29,7 @@
                     <td>${book.title}</td>
                     <td>${book.author}</td>
                     <td>${book.available}</td>
-                    <td class="text-center"><a class="btn btn-sm btn-info">Rent</a></td>
+                    <td class="text-center"><a href="${rentBookUrl}/${book.id}" class="btn btn-sm btn-info">Rent</a></td>
                     <td class="text-center"><a href="${editBookUrl}/${book.id}" class="btn btn-sm btn-success">Edit</a></td>
                     <td class="text-center"><a href="${deleteBookUrl}/${book.id}" class="btn btn-sm btn-danger delete-button">Delete</a></td>
                 </tr>

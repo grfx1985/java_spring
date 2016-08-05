@@ -31,4 +31,10 @@ public @Data class Rent extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private Status status = Status.IN_PROGRESS;
+
+    public Rent(Book book, User user) {
+        rentDate = new Date();
+        this.book = book;
+        this.user = user;
+     }
 }

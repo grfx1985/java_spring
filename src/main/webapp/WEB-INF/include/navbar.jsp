@@ -9,6 +9,8 @@
 <c:url var="logoutUserUrl" value="/logout"/>
 
 <c:url var="usersUrl" value="/users"/>
+<c:url var="rentsUrl" value="/rents"/>
+
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -42,7 +44,7 @@
                         <li role="separator" class="divider"> </li>
                         <li><a href="${booksUrl}">Show all</a></li>
                     </ul>
-                <li><a href="#">My rents</a></li>
+                <li><a href="${rentsUrl}">My rents</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
