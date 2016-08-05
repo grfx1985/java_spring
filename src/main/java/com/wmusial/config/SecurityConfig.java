@@ -1,5 +1,6 @@
 package com.wmusial.config;
 
+import com.wmusial.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -15,8 +16,16 @@ import javax.sql.DataSource;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // ctrl + o i wybieramy configura....
 
+
+
+//      uzywane z opcja jdbc to co nizej
+//    @Autowired
+//    private DataSource dataSource;
+
+
     @Autowired
-    private DataSource dataSource;
+    private UserService userService;
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -24,5 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // auth.jdbcAuthentication().dataSource(dataSource); // uzywanie jdbc standard java  pobiera autowire z hibernate config.
         // spring zaklada ze mamy users table z username  i password kolumnami
+
+        auth.userDetailsService(userService); // opcja z frameworkiem spring hibernate 3 opcja
     }
 }
