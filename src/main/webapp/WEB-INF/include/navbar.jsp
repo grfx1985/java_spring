@@ -52,7 +52,7 @@
                         <li><a href="#">My account</a></li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="${logoutUserUrl}">Logout</a>
+                            <a class="logout-button" href="${logoutUserUrl}">Logout</a>
 
                         </li>
                     </ul>
@@ -61,3 +61,18 @@
         </div>
     </div>
 </nav>
+<script>
+    $(function() {
+        $('.logout-button').on('click', function(event) {
+            console.log(event);
+            event.preventDefault();
+            var url = event.target.href;
+            $.post(url,{
+                '${_csrf.parameterName}' : '${_csrf.token}'
+            })
+                    .done(function(){
+                        location.reload();
+                    });
+        });
+    });
+</script>
