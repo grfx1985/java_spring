@@ -40,11 +40,18 @@
 
 </div>
 <sript>
-    $('.delete-button').on('click', function(event) {
-        console.log(event);
-        var url = event.target.href;
-        $.post(url);
-        location.reload();
-    });
+    // $(document).ready(function() {
+    //
+    // });
+
+    $(function() {
+        $('.delete-button').on('click', function(event) {
+            console.log(event);
+            var url = event.target.href;
+            $.post(url);
+            location.reload();
+        });
+        });
+
 </sript>
 <%@ include file="/WEB-INF/include/footer.jsp" %>
