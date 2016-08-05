@@ -17,4 +17,10 @@ public interface RentRepository extends JpaRepository<Rent, Long> {
             "LEFT JOIN FETCH r.book " +
             "WHERE r.user = :userParam")
     List<Rent> findByUser(@Param("userParam") User user);
+
+//    @Query("SELECT r FROM Rent r " +
+//            "LEFT JOIN FETCH r.user " +
+//            "LEFT JOIN FETCH r.book " +
+//            "WHERE r.user.email = :email")
+//    List<Rent> findByUserEmail(@Param("email") String email);
 }

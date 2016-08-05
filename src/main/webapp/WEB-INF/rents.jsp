@@ -1,8 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/WEB-INF/include/header.jsp" %>
 <%@ include file="/WEB-INF/include/navbar.jsp" %>
-<c:url var="editUserUrl" value="/user/edit"/>
-<c:url var="deleteUserUrl" value="/user/delete"/>
+<c:url var="returnUrl" value="/rent/return"/>
 <div class="container">
 
     <h1>List of Rents</h1>
@@ -17,8 +16,7 @@
                     <th class="text-center">Date Return</th>
                     <th class="text-center">User</th>
                     <th class="text-center">Book</th>
-                    <th class="text-center col-md-1">Edit</th>
-                    <th class="text-center col-md-1">Delete</th>
+                    <th class="text-center col-md-1">Return Book Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -27,10 +25,9 @@
                         <td>${rent.id}</td>
                         <td>${rent.rentDate}</td>
                         <td>${rent.returnDate}</td>
-                        <td>${rent.user.firstName}${rent.user.lastName}</td>
+                        <td>${rent.user.firstName}  ${rent.user.lastName}</td>
                         <td>${rent.book.title} (${rent.book.author})</td>
-                        <%--<td class="text-center"><a href="${editUserUrl}/${user.id}" class="btn btn-sm btn-success">Edit</a></td>--%>
-                        <%--<td class="text-center"><a href="${deleteUserUrl}/${user.id}" class="btn btn-sm btn-danger delete-button">Delete</a></td>--%>
+                        <td class="text-center"><a href="${returnUrl}" class="btn btn-sm btn-success">Return Book</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>

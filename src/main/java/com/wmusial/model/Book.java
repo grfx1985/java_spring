@@ -18,6 +18,10 @@ public @Data class Book extends BaseEntity {
     private String author;
     private int available; // ile dostepnych
 
+    public void decrementAvailable() {
+        this.available = this.available-1;
+    }
+
 //    public Book() {
 //    }
 //

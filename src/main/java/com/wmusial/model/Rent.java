@@ -14,11 +14,11 @@ import java.util.Date;
 
 public @Data class Rent extends BaseEntity {
 
-    public enum Status { IN_PROGRESS , FINISHED }
     @Column(name="return_date")
     private Date returnDate;
     @Column(name="rent_date")
     private Date rentDate;
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="book_id")
@@ -28,6 +28,7 @@ public @Data class Rent extends BaseEntity {
     @JoinColumn(name="user_id")
     private User user;
 
+    public enum Status { IN_PROGRESS , FINISHED }
 
     @Enumerated(EnumType.STRING)
     private Status status = Status.IN_PROGRESS;
