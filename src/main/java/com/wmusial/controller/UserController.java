@@ -64,11 +64,20 @@ public class UserController {
     }
 
     @RequestMapping(value="/user/delete/{id}", method = RequestMethod.POST)
-    public String postDeleteBook(@PathVariable Long id) {
+    public String postDeleteUser(@PathVariable Long id) {
 
         userService.deleteById(id);
 
         return "redirect:/"; // javascript to ogarnie wiec moze byc nawet nic
+    }
+
+    @RequestMapping(value="/user/edit/{id}", method = RequestMethod.GET)
+    public String getEditUserForm(Model model,@PathVariable Long id) {
+
+        User user = userService.findById(id);
+        model.addAttribute("user",user);
+
+        return "user-create";
     }
 
 }
