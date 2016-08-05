@@ -27,7 +27,12 @@
                         <td>${rent.returnDate}</td>
                         <td>${rent.user.firstName}  ${rent.user.lastName}</td>
                         <td>${rent.book.title} (${rent.book.author})</td>
-                        <td class="text-center"><a href="${returnUrl}" class="btn btn-sm btn-success">Return Book</a></td>
+                        <c:if test="${rent.returnDate != null}">
+                            <td class="text-center"><a href="${returnUrl}/${rent.id}" class="btn btn-sm btn-default disabled">Return Book</a></td>
+                        </c:if>
+                        <c:if test="${rent.returnDate == null}">
+                            <td class="text-center"><a href="${returnUrl}/${rent.id}" class="btn btn-sm btn-success return-button">Return Book</a></td>
+                        </c:if>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -42,6 +47,20 @@
 <script>
     $(function() {
         $('.delete-button').on('click', function(event) {
+            console.log(event);
+            event.preventDefault();
+            var url = event.target.href;
+            $.post(url,{
+                '${_csrf.parameterName}' : '${_csrf.token}'
+            })
+                    .done(function(){
+                        location.reload();
+                    });
+        });
+    });
+
+    $(function() {
+        $('.return-button').on('click', function(event) {
             console.log(event);
             event.preventDefault();
             var url = event.target.href;

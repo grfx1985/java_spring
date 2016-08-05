@@ -1,6 +1,7 @@
 package com.wmusial.service;
 
 import com.wmusial.model.Book;
+import com.wmusial.model.Rent;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,5 @@ public interface BookService {
     Book findById(Long id);
 
     void deleteById(Long id);
-
 
 }

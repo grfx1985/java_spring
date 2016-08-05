@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.security.Principal;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -46,6 +47,19 @@ public class RentController {
 
 
         return "rents";
+    }
+    @RequestMapping(value = "/rent/return/{rentId}", method=RequestMethod.POST)
+    public String rentReturn(@PathVariable Long rentId){
+
+        Rent rent = rentService.findById(rentId);
+        rent.setReturnDate(new Date());
+        rent.setStatus(Rent.Status.FINISHED);
+        rentService.save(rent);
+
+//        Book book = bookService.findByRent(rent);
+//        book.incrementAvailable();
+//        bookService.save(book);
+        return "redirect:/rents";
     }
 
     @RequestMapping(value="/rent/book/{bookId}", method=RequestMethod.POST)

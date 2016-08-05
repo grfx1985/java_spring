@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
 
 @AllArgsConstructor // wszystkie konstruktory
@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="book")
 public @Data class Book extends BaseEntity {
+
 
     private String title;
     private String author;
@@ -22,6 +23,11 @@ public @Data class Book extends BaseEntity {
         if (this.available > 0) {
             this.available = this.available - 1;
         }
+    }
+
+
+    public void incrementAvailable() {
+            this.available = this.available + 1;
     }
 
 //    public Book() {

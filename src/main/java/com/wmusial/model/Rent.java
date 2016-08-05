@@ -28,10 +28,12 @@ public @Data class Rent extends BaseEntity {
     @JoinColumn(name="user_id")
     private User user;
 
+
     public enum Status { IN_PROGRESS , FINISHED }
 
     @Enumerated(EnumType.STRING)
     private Status status = Status.IN_PROGRESS;
+
 
     public Rent(Book book, User user) {
         rentDate = new Date();

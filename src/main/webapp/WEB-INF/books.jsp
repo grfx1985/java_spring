@@ -33,7 +33,7 @@
                     <td class="text-center"><a href="${rentBookUrl}/${book.id}" class="btn btn-sm btn-info rent-book">Rent</a></td>
                     </c:if>
                     <c:if test="${book.available == 0}">
-                        <td class="text-center"><a href="${rentBookUrl}/${book.id}" class="btn btn-sm btn-primary disabled">Rent</a></td>
+                        <td class="text-center"><a href="${rentBookUrl}/${book.id}" class="btn btn-sm btn-default disabled">Rent</a></td>
                     </c:if>
                     <td class="text-center"><a href="${editBookUrl}/${book.id}" class="btn btn-sm btn-success">Edit</a></td>
                     <td class="text-center"><a href="${deleteBookUrl}/${book.id}" class="btn btn-sm btn-danger delete-button">Delete</a></td>

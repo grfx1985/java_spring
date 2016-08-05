@@ -5,10 +5,7 @@ import com.wmusial.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -50,18 +47,18 @@ import java.util.List;
     }
 
     @RequestMapping(value="/book/save", method = RequestMethod.POST)
-    public String postCreateBook(@RequestParam(name = "author", required = true) String author,
-                                 @RequestParam String title,
-                                 @RequestParam Long id,
-                                 @RequestParam int available) {
+    public String postCreateBook(@ModelAttribute Book book) {
             // alternatywa dla @REQUESTPARAM to @ModelAttribute Book book
                                  // odebrac parametry z formularza
-
+//        @RequestParam(name = "author", required = true) String author,
+//        @RequestParam String title,
+//        @RequestParam Long id,
+//        @RequestParam int available
 
         // zrobic obiekty z parametrow
         // !! JESLI UZYJEMY @ModelAttribute ^^ to obiektu nizej juz nie trzeba
-            Book book = new Book(author, title, available);
-            book.setId(id);
+//            Book book = new Book(author, title, available);
+//            book.setId(id);
         // zapisac je do bazy
             bookService.save(book);
 

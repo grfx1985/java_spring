@@ -3,6 +3,7 @@ package com.wmusial.service.impl;
 
 import com.wmusial.dao.BookRepository;
 import com.wmusial.model.Book;
+import com.wmusial.model.Rent;
 import com.wmusial.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,5 @@ public class BookServiceImpl implements BookService {
     public void deleteById(Long id) {
         bookRepository.delete(id);
     }
-
-
 
 }
