@@ -3,6 +3,7 @@ package com.wmusial.controller;
 import com.wmusial.model.User;
 import com.wmusial.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +37,13 @@ public class MainController {
 
     @RequestMapping(value="/register", method = RequestMethod.POST)
     public String postCreateBook(@ModelAttribute User user) {
+
+        // hashowanie
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
+
+        String password = encoder.encode(user.getPassword());
+
+        user.setPassword(password);
 
         // zapisac je do bazy
         userService.save(user);
