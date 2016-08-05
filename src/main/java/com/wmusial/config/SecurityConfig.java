@@ -56,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .passwordParameter("password")
                     .loginPage("/login")
                     .loginProcessingUrl("/login") // gdzie leci post
-                    .failureUrl("/login?error")
+                    .failureForwardUrl("/login?error")
 
 
                 .and()

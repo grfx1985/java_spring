@@ -9,12 +9,12 @@
     </div>
     </c:>
 
-    <c:if test="${param.register != null}">
+    <c: test="${param.register != null}">
     <div class="alert alert-info fade in">
         <a class="close" data-dismiss="alert" href="#">&times;</a>
         <p>Register successful. You can log in</p>
     </div>
-    </c:if>
+    </c:>
 
     <c: if test="${param.error != null}">
     <div class="alert alert-danger fade in">
