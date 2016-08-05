@@ -1,5 +1,6 @@
 package com.wmusial.config;
-
+// klasa glowna z konfiguracja do aplikacji
+// webowe sprawy aspekty zwiazane z ogolnymi zasadami dzialania aplikacji
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
