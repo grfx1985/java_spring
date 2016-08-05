@@ -37,6 +37,7 @@ public class ApplicationInitializer implements WebApplicationInitializer {
         servletContext.addFilter("characterEncodingFilter", characterEncodingFilter)
                 .addMappingForUrlPatterns(DISPATCHER_TYPES, true, "/*");
 
+        //ekran logowania filter
         DelegatingFilterProxy delegatingFilterProxy = new DelegatingFilterProxy();
         servletContext.addFilter("springSecurityFilterChain" , delegatingFilterProxy).addMappingForUrlPatterns(null, true ,"/*");
 
