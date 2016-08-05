@@ -3,6 +3,7 @@ package com.wmusial.controller;
 import com.wmusial.model.User;
 import com.wmusial.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -48,8 +49,13 @@ public class UserController {
         // odebrac parametry z formularza
 
         // zapisac je do bazy
-        userService.save(user);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
 
+        String password = encoder.encode(user.getPassword());
+
+        user.setPassword(password);
+
+        userService.save(user);
 
         // przekierowac uzytkownika do listy ksiazek
 
