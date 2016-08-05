@@ -5,6 +5,7 @@ import com.wmusial.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -40,5 +41,19 @@ public class UserController {
         return "user-create";
     }
 
+
+    @RequestMapping(value="/book/save", method = RequestMethod.POST)
+    public String postCreateBook(@ModelAttribute User user) {
+
+        // odebrac parametry z formularza
+
+        // zapisac je do bazy
+        userService.save(user);
+
+
+        // przekierowac uzytkownika do listy ksiazek
+
+        return "redirect:/users";
+    }
 
 }
