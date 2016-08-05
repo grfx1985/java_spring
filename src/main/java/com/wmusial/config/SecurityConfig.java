@@ -4,6 +4,7 @@ import com.wmusial.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -36,4 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         auth.userDetailsService(userService); // opcja z frameworkiem spring hibernate 3 opcja
     }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception { // dopasowanie odpowiednich widokow nie default springowy ekran logowania
+
+    }
 }
+
