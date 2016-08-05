@@ -27,11 +27,11 @@
                 <%--  rola admin widzi userow  --%>
                 <sec:authorize access="hasRole('ADMIN')">
                 <li class="dropdown">
-                    <a href="${usersUrl}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">New...</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Show all</a></li>
+                        <li><a href="${usersUrl}">Show all</a></li>
                     </ul>
                 </li>
                 </sec:authorize>

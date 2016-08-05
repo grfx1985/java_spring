@@ -14,7 +14,6 @@
                 <tr>
                     <th class="text-center col-md-1">Id</th>
                     <th class="text-center">Email</th>
-                    <th class="text-center col-md-1">Action</th>
                     <th class="text-center col-md-1">Edit</th>
                     <th class="text-center col-md-1">Delete</th>
                 </tr>
@@ -24,7 +23,6 @@
                     <tr>
                         <td>${user.id}</td>
                         <td>${user.email}</td>
-                        <td class="text-center"><a class="btn btn-sm btn-info">Rent</a></td>
                         <td class="text-center"><a href="${editUserUrl}/${user.id}" class="btn btn-sm btn-success">Edit</a></td>
                         <td class="text-center"><a href="${deleteUserUrl}/${user.id}" class="btn btn-sm btn-danger delete-button">Delete</a></td>
                     </tr>
