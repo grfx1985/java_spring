@@ -22,7 +22,7 @@ public @Data class Rent extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="book_id")
-    private Status book;
+    private Book book;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
