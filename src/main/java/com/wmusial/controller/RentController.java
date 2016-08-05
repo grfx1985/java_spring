@@ -48,7 +48,7 @@ public class RentController {
         return "rents";
     }
 
-    @RequestMapping(value="/rent/book/{bookId}", method=RequestMethod.GET)
+    @RequestMapping(value="/rent/book/{bookId}", method=RequestMethod.POST)
     public String rentBook(@PathVariable Long bookId, Principal principal) {
         Book book = bookService.findById(bookId);
         book.decrementAvailable();

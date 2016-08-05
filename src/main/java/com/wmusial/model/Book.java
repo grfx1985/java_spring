@@ -19,7 +19,9 @@ public @Data class Book extends BaseEntity {
     private int available; // ile dostepnych
 
     public void decrementAvailable() {
-        this.available = this.available-1;
+        if (this.available > 0) {
+            this.available = this.available - 1;
+        }
     }
 
 //    public Book() {
