@@ -28,9 +28,9 @@
                     <td>${book.title}</td>
                     <td>${book.author}</td>
                     <td>${book.available}</td>
-                    <td class="text-center"><a class="btn btn-sm btn-primary">Rent</a></td>
-                    <td class="text-center"><a href="${editBookUrl}/${book.id}" class="btn btn-sm btn-primary">Edit</a></td>
-                    <td class="text-center"><a href="${deleteBookUrl}/${book.id}" class="btn btn-sm btn-primary">Delete</a></td>
+                    <td class="text-center"><a class="btn btn-sm btn-info">Rent</a></td>
+                    <td class="text-center"><a href="${editBookUrl}/${book.id}" class="btn btn-sm btn-success">Edit</a></td>
+                    <td class="text-center"><a href="${deleteBookUrl}/${book.id}" class="btn btn-sm btn-danger delete-button">Delete</a></td>
                 </tr>
                 </c:forEach>
                 </tbody>
@@ -39,4 +39,12 @@
     </div>
 
 </div>
+<sript>
+    $('.delete-button').on('click', function(event) {
+        console.log(event);
+        var url = event.target.href;
+        $.post(url);
+        location.reload();
+    });
+</sript>
 <%@ include file="/WEB-INF/include/footer.jsp" %>
