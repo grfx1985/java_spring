@@ -39,11 +39,10 @@
     </div>
 
 </div>
-<sript>
-    // $(document).ready(function() {
-    //
-    // });
-
+<%--// $(document).ready(function() {
+//
+// });--%>
+<script>
     $(function() {
         $('.delete-button').on('click', function(event) {
             console.log(event);
@@ -53,6 +52,5 @@
             location.reload();
         });
         });
-
-</sript>
+</script>
 <%@ include file="/WEB-INF/include/footer.jsp" %>
