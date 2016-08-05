@@ -4,6 +4,7 @@ package com.wmusial.config;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.DispatcherType;
@@ -35,6 +36,9 @@ public class ApplicationInitializer implements WebApplicationInitializer {
         characterEncodingFilter.setForceEncoding(true);
         servletContext.addFilter("characterEncodingFilter", characterEncodingFilter)
                 .addMappingForUrlPatterns(DISPATCHER_TYPES, true, "/*");
+
+        DelegatingFilterProxy delegatingFilterProxy = new DelegatingFilterProxy();
+        servletContext.addFilter("springSecurityFilterChain" , delegatingFilterProxy).addMappingForUrlPatterns(null, true ,"/*");
 
     }
 }
