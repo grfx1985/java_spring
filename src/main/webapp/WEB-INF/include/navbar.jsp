@@ -41,10 +41,8 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                < class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <sec:authentication property="principal.username"/>
-                        <span class="caret"></span></a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><sec:authentication property="principal.username"/><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">My account</a></li>
                         <li role="separator" class="divider"></li>
