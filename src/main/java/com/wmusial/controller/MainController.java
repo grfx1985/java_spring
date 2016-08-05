@@ -21,6 +21,13 @@ public class MainController {
         return "login";
     }
 
+    @RequestMapping(value="/logout", method=RequestMethod.POST)
+    public String postLogoutPage(){
+
+
+        return "redirect:/login";
+    }
+
     @RequestMapping(value="/register", method=RequestMethod.GET)
     public String  getRegisterPage(){
         return "register";
