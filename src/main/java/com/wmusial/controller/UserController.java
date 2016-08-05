@@ -42,8 +42,8 @@ public class UserController {
     }
 
 
-    @RequestMapping(value="/book/save", method = RequestMethod.POST)
-    public String postCreateBook(@ModelAttribute User user) {
+    @RequestMapping(value="/user/save", method = RequestMethod.POST)
+    public String postCreateUser(@ModelAttribute User user) {
 
         // odebrac parametry z formularza
 

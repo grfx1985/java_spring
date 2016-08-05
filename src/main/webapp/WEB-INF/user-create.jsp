@@ -1,13 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/WEB-INF/include/header.jsp" %>
 <%@ include file="/WEB-INF/include/navbar.jsp" %>
-
+<c:url var="createUserUrl" value="/user/save"/>
 <div class="container">
 
     <h1>Create user</h1>
 
     <div class="row">
-        <form role="form" class="form-horizontal">
+        <form action="${createUserUrl}" method="post" role="form" class="form-horizontal">
             <input type="hidden"
                    name="${_csrf.parameterName}"
                    value="${_csrf.token}"/>
@@ -38,7 +38,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-6">
                     <button type="submit" class="btn btn-primary">Save</button>
-                    <a href="#" class="btn btn-danger">Cancel</a>
+                    <a href="${usersUrl}" class="btn btn-danger">Cancel</a>
                 </div>
             </div>
         </form>
