@@ -4,9 +4,14 @@ import com.wmusial.dao.UserRepository;
 import com.wmusial.model.User;
 import com.wmusial.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service  // dla opcji logowania dodajemy zeby config czytal
 public class UserServiceImpl implements UserService {
@@ -24,6 +29,14 @@ public class UserServiceImpl implements UserService {
             throw new UsernameNotFoundException("Nie znaleziono Uzytkownika " + email );
         }
 
-        return null;
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN")); // role jak dodamy spring zinterpretuje premission jest druga opcja
+
+
+        return new org.springframework.security.core.userdetails.User(
+                user.getEmail();
+                user.getPassword();
+                authorities
+        );
     }
 }
