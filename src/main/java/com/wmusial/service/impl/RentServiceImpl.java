@@ -30,4 +30,9 @@ public class RentServiceImpl implements RentService {
         return rentRepository.findOne(rentId);
     }
 
+    @Override
+    public void deleteById(Long id) {
+        rentRepository.delete(id);
+    }
+
 }

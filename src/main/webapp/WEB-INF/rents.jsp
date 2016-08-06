@@ -2,6 +2,7 @@
 <%@ include file="/WEB-INF/include/header.jsp" %>
 <%@ include file="/WEB-INF/include/navbar.jsp" %>
 <c:url var="returnUrl" value="/rent/return"/>
+<c:url var="deleteReturnUrl" value="/rent/delete"/>
 <div class="container">
 
     <h1>List of Rents</h1>
@@ -17,6 +18,9 @@
                     <th class="text-center">User</th>
                     <th class="text-center">Book</th>
                     <th class="text-center col-md-1">Return Book Action</th>
+                    <sec:authorize access="hasRole('ADMIN')">
+                    <th class="text-center col-md-1">Remove</th>
+                    </sec:authorize>
                 </tr>
                 </thead>
                 <tbody>
@@ -33,6 +37,9 @@
                         <c:if test="${rent.returnDate == null}">
                             <td class="text-center"><a href="${returnUrl}/${rent.id}" class="btn btn-sm btn-success return-button">Return Book</a></td>
                         </c:if>
+                        <sec:authorize access="hasRole('ADMIN')">
+                        <td class="text-center"><a href="${deleteReturnUrl}/${rent.id}" class="btn btn-sm btn-success delete-button">Delete</a></td>
+                        </sec:authorize>
                     </tr>
                 </c:forEach>
                 </tbody>

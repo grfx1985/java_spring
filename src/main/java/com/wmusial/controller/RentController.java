@@ -72,4 +72,13 @@ public class RentController {
         rentService.save(rent);
         return "redirect:/rents";
     }
+
+    @RequestMapping(value="/rent/delete/{id}", method = RequestMethod.POST)
+    public String postDeleteRent(@PathVariable Long id) {
+
+        rentService.deleteById(id);
+
+        return "redirect:/rents"; // javascript to ogarnie wiec moze byc nawet nic
+    }
+
 }
