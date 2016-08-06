@@ -14,5 +14,5 @@ public interface RentService {
 
     void save(Rent rent);
 
-    Rent findById(Long rentId);
+    Rent findByRentId(Long rentId);
 }

@@ -1,5 +1,6 @@
 package com.wmusial.dao;
 
+import com.wmusial.model.Book;
 import com.wmusial.model.Rent;
 import com.wmusial.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -24,4 +25,9 @@ public interface RentRepository extends JpaRepository<Rent, Long> {
 //            "LEFT JOIN FETCH r.book " +
 //            "WHERE r.user.email = :email")
 //    List<Rent> findByUserEmail(@Param("email") String email);
+
+    @Query("SELECT r FROM Rent r " +
+            "LEFT JOIN FETCH r.book " +
+            "WHERE r.id = :rParam")
+    Rent findByRentId(@Param("rParam") Book book);
 }

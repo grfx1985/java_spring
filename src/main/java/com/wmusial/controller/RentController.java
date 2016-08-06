@@ -51,14 +51,14 @@ public class RentController {
     @RequestMapping(value = "/rent/return/{rentId}", method=RequestMethod.POST)
     public String rentReturn(@PathVariable Long rentId){
 
-        Rent rent = rentService.findById(rentId);
+        Rent rent = rentService.findByRentId(rentId);
         rent.setReturnDate(new Date());
         rent.setStatus(Rent.Status.FINISHED);
         rentService.save(rent);
 
-//        Book book = bookService.findByRent(rent);
-//        book.incrementAvailable();
-//        bookService.save(book);
+        Book book = bookService.findById(rent.getBook().getId());
+        book.incrementAvailable();
+        bookService.save(book);
         return "redirect:/rents";
     }
 

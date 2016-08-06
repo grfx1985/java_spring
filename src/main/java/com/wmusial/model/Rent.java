@@ -20,7 +20,7 @@ public @Data class Rent extends BaseEntity {
     private Date rentDate;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="book_id")
     private Book book;
 

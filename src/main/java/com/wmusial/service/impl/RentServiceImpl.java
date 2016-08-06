@@ -24,8 +24,9 @@ public class RentServiceImpl implements RentService {
         rentRepository.save(rent);
     }
 
+
     @Override
-    public Rent findById(Long rentId) {
+    public Rent findByRentId(Long rentId) {
         return rentRepository.findOne(rentId);
     }
 
