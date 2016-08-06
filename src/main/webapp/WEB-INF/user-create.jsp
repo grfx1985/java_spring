@@ -36,17 +36,17 @@
                     <input name="password" type="password" id="password" class="form-control" placeholder="Enter password phrase" autofocus>
                 </div>
             </div>
-            <sec:authorize access="hasRole('ADMIN')">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="admin">Admin?:</label>
-                <div class="col-sm-6">
-                    <select name="admin" type="select" id="admin" class="form-control" placeholder="Admin?" autofocus>
-                        <option>ADMIN</option>
-                        <option>USER</option>
-                    </select>
-                </div>
-            </div>
-            </sec:authorize>
+            <%--<sec:authorize access="hasRole('ADMIN')">--%>
+            <%--<div class="form-group">--%>
+                <%--<label class="control-label col-sm-2" for="admin">Admin?:</label>--%>
+                <%--<div class="col-sm-6">--%>
+                    <%--<select name="admin" type="select" id="admin" class="form-control" placeholder="Admin?" autofocus>--%>
+                        <%--<option value="${User.Role.ADMIN}">ADMIN</option>--%>
+                        <%--<option value="${User.Role.USER}">USER</option>--%>
+                    <%--</select>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--</sec:authorize>--%>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-6">
                     <button type="submit" class="btn btn-primary">Save</button>
